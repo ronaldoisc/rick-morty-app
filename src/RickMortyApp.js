@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Typography } from '@mui/material';
 export const RickMortyApp = () => {
-  return <div>hola</div>;
+  return <Typography variant='h2' component={'h1'}>RONALDO</Typography>;
 };
