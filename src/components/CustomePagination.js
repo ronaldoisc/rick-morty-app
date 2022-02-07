@@ -11,25 +11,48 @@ export const CustomePagination = () => {
     const { type, name } = activeSearch;
     
     const dispatch = useDispatch();
+    
 
     return <Stack spacing={2}>
         {
             data.info &&
             <Pagination
+           
+            
+            count={data.info.pages}
+            onChange={(event, val) => {
+                var index=val;
+                        dispatch(startSearchCharacterByName(type, name, index))
+                    }}
+         
+            renderItem={(item) => (
+              <PaginationItem
+            
+                components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+                {...item}
+              />
+              
+            )}
+        
+           
+          />
+            // <Pagination
+              
+            //     count={data.info.pages}
+            //     renderItem={(item) => {
+            //         return <PaginationItem
+                   
+                   
+            //             components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+            //             {...item}
+            //         />
+            //     }
 
-                count={data.info.pages}
-                renderItem={(item) => {
-                    return <PaginationItem
-                        components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
-                        {...item}
-                    />
-                }
-
-                }
-                onChange={(event, val) => {
-                    dispatch(startSearchCharacterByName(type, name, val))
-                }}
-            />
+            //     }
+            //     onChange={(event, val) => {
+            //         dispatch(startSearchCharacterByName(type, name, val))
+            //     }}
+            // />
         }
     </Stack>
 };

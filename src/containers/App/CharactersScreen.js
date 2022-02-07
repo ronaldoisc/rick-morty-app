@@ -2,7 +2,9 @@ import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CustomePagination } from '../../components/CustomePagination';
+import { ErrorAlert } from '../../components/ErrorAlert';
 import { InputSearch } from '../../components/InputSearch';
+import { Louder } from '../../components/Louder';
 import { NavBar } from '../../components/NavBar';
 import { startLoadingCharacters } from '../../redux/modules/characters';
 import { GridCharacters } from '../characters/GridCharacters';
@@ -14,8 +16,6 @@ export const CharactersScreen = () => {
 
   const { data, activeSearch } = useSelector(state => state.character);
   const { loading } = useSelector(state => state.ui);
-  console.log(loading);
-
 
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export const CharactersScreen = () => {
   return <>
     {
       loading === true ?
-        <h1>Cargando</h1>
+        <Louder loading={loading} />
         :
         (
           <>
@@ -34,15 +34,15 @@ export const CharactersScreen = () => {
               The Rick and Morty App
             </Typography>
             <InputSearch typeSearch={'characters'} />
+            {/* show pagination when the user search something */}
+            { activeSearch.type && <CustomePagination />}
+            
+            {/* if the search return empty show a alert else show gridCharacters */}
             {
-              activeSearch.type === null ?
-                ''
-                :
-                <CustomePagination />
-
+              data.error ? 
+              <ErrorAlert message={data.error} /> :
+              <GridCharacters characters={data.results} />
             }
-
-            <GridCharacters characters={data.results} />
           </>
         )
     }

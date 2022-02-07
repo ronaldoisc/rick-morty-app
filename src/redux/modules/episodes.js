@@ -10,7 +10,6 @@ export const types = {
 
 //INITIALSTATE
 const initialState = {
-    loading: true,
     list: []
 }
 

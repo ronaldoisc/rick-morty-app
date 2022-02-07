@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 export const GridEpisodeItem = ({ episode }) => {
-  return <Card sx={{ width: 200, margin: '1rem' }} style={{ backgroundColor: '#565A56' }}>
+  return <Card sx={{ width: 200, margin: '1rem' }} style={{ backgroundColor: '#8D908D' }}>
     <CardActionArea  >
 
       <CardContent>
@@ -13,10 +13,10 @@ export const GridEpisodeItem = ({ episode }) => {
          {episode.name}
         </Typography>
         <Typography gutterBottom variant="h6" component="p">
-          date: {episode.air_date}
+          Date: {episode.air_date}
         </Typography>
         <Typography gutterBottom variant="h6" component="p">
-          episode: {episode.episode}
+          Episode: {episode.episode}
         </Typography>
         
 

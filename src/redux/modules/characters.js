@@ -20,7 +20,7 @@ const initialState = {
         name: null
     },
     characterEpisodes:[],
-    loading: true
+    
 }
 
 //REDUCER
@@ -71,16 +71,14 @@ export const startSearchCharacterByName = (type, name, page) => {
 
     return async (dispatch) => {
         try {
-            dispatch(startLoading());
+         
             const resp = await customeFetch(`character/?${type || 'name'}=${name}&page=${page}`);
             const body = await resp.json();
-
             dispatch(loadCharacterByType(body))
             dispatch(activeSearch(type, name));
-            dispatch(finishLoading());
 
         } catch (error) {
-            console.log(error);
+           
         }
 
     }

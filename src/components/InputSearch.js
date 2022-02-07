@@ -14,15 +14,16 @@ import { startLoadingEpisodesByName } from '../redux/modules/episodes';
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(1),
-        width: 'auto',
+        width: '30%',
+
     },
 }));
 
@@ -54,24 +55,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const InputSearch = ({ typeSearch }) => {
     const dispatch = useDispatch();
 
-
     const [type, setType] = React.useState('');
-
     const handleChange = (event) => {
-
         setType(event.target.value);
     };
 
     return <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'flex', alignItems: 'center' } }}>
         <Search
-
             onKeyPressCapture={value => {
                 if (value.charCode === 13) {
-
                     if (typeSearch === 'characters') {
                         dispatch(startSearchCharacterByName(type, value.target.value))
                     } else if (typeSearch === 'episodes') {
-                        dispatch(startLoadingEpisodesByName(type,value.target.value))
+                        dispatch(startLoadingEpisodesByName(type, value.target.value))
                     }
                 }
             }}
@@ -79,13 +75,12 @@ export const InputSearch = ({ typeSearch }) => {
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
-
             <StyledInputBase
                 placeholder="Search here.."
                 inputProps={{ 'aria-label': 'search' }}
             />
         </Search>
-        <Box sx={{ width: 220, marginLeft: { xs: '0px', md: '1rem' } }} >
+        <Box sx={{ width: 150, marginLeft: { xs: '0px', md: '1rem' }, marginTop: { xs: '10px' } }} >
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">filter</InputLabel>
                 {
@@ -96,7 +91,6 @@ export const InputSearch = ({ typeSearch }) => {
                             value={type}
                             label="character"
                             onChange={handleChange}
-
                         >
                             <MenuItem value={'name'}>name</MenuItem>
                             <MenuItem value={'status'}>status</MenuItem>
@@ -110,7 +104,6 @@ export const InputSearch = ({ typeSearch }) => {
                             value={type}
                             label="episode"
                             onChange={handleChange}
-
                         >
                             <MenuItem value={'name'}>name</MenuItem>
                             <MenuItem value={'episode'}>episode</MenuItem>
