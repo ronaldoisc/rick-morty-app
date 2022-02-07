@@ -37,7 +37,7 @@ export const CharactersScreen = () => {
             {/* show pagination when the user search something */}
             { activeSearch.type && <CustomePagination />}
             
-            {/* if the search return empty show a alert else show gridCharacters */}
+            {/* if the search return empty, it will show custome alert else show gridCharactersComponent */}
             {
               data.error ? 
               <ErrorAlert message={data.error} /> :

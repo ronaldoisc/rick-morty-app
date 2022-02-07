@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { InputSearch } from '../../components/InputSearch';
@@ -26,7 +27,9 @@ export const EpisodesScreen = () => {
         <div>
           <NavBar />
           <InputSearch typeSearch={'episodes'} />
-          <h1>((Episodes))</h1>
+         <Typography variant='h3' fontWeight={'bold'}>
+         ((Episodes))
+         </Typography>
           <GridEpisodes episodes={episodes} />
         </div>
     }
