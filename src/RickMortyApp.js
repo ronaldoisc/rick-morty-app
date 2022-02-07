@@ -1,5 +1,12 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Provider } from 'react-redux';
+import { store } from './redux/configureStore';
+import AppRouter from './router/AppRouter';
+
 export const RickMortyApp = () => {
-  return <Typography variant='h2' component={'h1'}>RONALDO</Typography>;
+  return <>
+  <Provider store={store}>
+      <AppRouter/>
+  </Provider>
+  </>
 };
