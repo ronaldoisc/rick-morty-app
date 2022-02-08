@@ -73,7 +73,7 @@ export const NavBar = () => {
                 pages.map((page) => (
                   <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
-                      <Link  to={page.path} >
+                      <Link  to={page.path} style={{color:'white', textDecoration:'none'}} >
                         {page.name}
                       </Link>
                     </Typography>
@@ -90,7 +90,7 @@ export const NavBar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link to={page.path}>
+                  <Link to={page.path} style={{color:'white', textDecoration:'none'}}>
                     {page.name}
                   </Link>
                 </Button>
