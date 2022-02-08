@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate
+  // Navigate
 
 } from "react-router-dom";
-import { CharactersScreen } from '../containers/App/CharactersScreen';
+// import { CharactersScreen } from '../containers/App/CharactersScreen';
 // import { EpisodesScreen } from '../containers/App/EpisodesScreen';
 // import { CharacterProfileScreen } from '../containers/characters/CharacterProfileScreen';
 
