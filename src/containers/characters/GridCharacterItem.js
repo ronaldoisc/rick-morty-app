@@ -4,9 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
-import { Avatar, Box, CardActionArea, CardActions, Link } from '@mui/material';
+import { Avatar, Box, CardActionArea, CardActions} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
+import { Link } from 'react-router-dom';
 
 export const GridCharacterItem = ({ character }) => {
 
@@ -74,9 +75,11 @@ export const GridCharacterItem = ({ character }) => {
 
     </CardActionArea>
     <CardActions>
-      <Link href={`/character/${character.id}`} underline="none">
+      <Link to={`/character/${character.id}`}>
+      detalles</Link>
+      {/* <Link href={`/character/${character.id}`} underline="none">
         More details
-      </Link>
+      </Link> */}
     </CardActions>
   </Card>
     ;
