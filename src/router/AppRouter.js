@@ -16,12 +16,9 @@ export const AppRouter = () => {
   return <Router>
   <Routes>
      <Route exact path='/' element={<CharactersScreen/>}/>
-
      <Route exact path='/character/:characterId' element={<CharacterProfileScreen/>}/>
-   
      <Route exact path='/episodes' element={<EpisodesScreen/>}/>
      <Route path='/*' element={<Navigate to={'/'}/>} />
-   
   </Routes>
 </Router>;
 };
