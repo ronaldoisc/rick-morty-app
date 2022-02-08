@@ -41,6 +41,7 @@
     -->
     <script>
       const isProduction=('%NODE_ENV%' === 'production');
+      console.log('%NODE_ENV%');
       if(isProduction && 'serviceWorker' in navigator){
        navigator.serviceWorker.register('sw.js');
       }
