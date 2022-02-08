@@ -36,23 +36,7 @@ export const CustomePagination = () => {
         
            
           />
-            // <Pagination
-              
-            //     count={data.info.pages}
-            //     renderItem={(item) => {
-            //         return <PaginationItem
-                   
-                   
-            //             components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
-            //             {...item}
-            //         />
-            //     }
 
-            //     }
-            //     onChange={(event, val) => {
-            //         dispatch(startSearchCharacterByName(type, name, val))
-            //     }}
-            // />
         }
     </Stack>
 };

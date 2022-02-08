@@ -4,7 +4,7 @@ import AlertTitle from '@mui/material/AlertTitle';
 export const ErrorAlert = ({ message }) => {
     return <div>
         <Alert severity="error">
-            <AlertTitle>Error</AlertTitle>
+            <AlertTitle>Error!</AlertTitle>
             <strong>{message}</strong>
         </Alert>
     </div>;
