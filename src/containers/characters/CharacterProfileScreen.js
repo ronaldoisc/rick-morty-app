@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { startLoadingCharacterById } from '../../redux/modules/characters';
@@ -27,6 +27,8 @@ export const CharacterProfileScreen = () => {
       loading === true ?
         <Louder loading={loading} />
         :
+        <div>
+          <Outlet />
         <Box display={'flex'} flexDirection={'column'} justifyContent='center' alignItems={'center'}>
           <Typography variant='h2'>Character Profile</Typography>
 
@@ -34,6 +36,7 @@ export const CharacterProfileScreen = () => {
           <h1>((Episodes))</h1>
           <GridEpisodes episodes={characterEpisodes} />
         </Box>
+        </div>
      }
   </>
 };

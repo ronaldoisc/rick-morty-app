@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 import { CustomePagination } from '../../components/CustomePagination';
 import { ErrorAlert } from '../../components/ErrorAlert';
 import { InputSearch } from '../../components/InputSearch';
@@ -29,6 +30,7 @@ export const CharactersScreen = () => {
         :
         (
           <>
+           <Outlet />
             <NavBar />
             <Typography sx={{ fontSize: { xs: '2rem', md: '5rem' } }} color={'black'} textAlign='center' fontWeight={'bold'}>
               The Rick and Morty App

@@ -2,7 +2,7 @@ export const pages = [
     {
       id: 1,
       name: 'Characters',
-      path: '/characters'
+      path: '/'
     },
     {
       id: 2,

@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 import { InputSearch } from '../../components/InputSearch';
 import { Louder } from '../../components/Louder';
 import { NavBar } from '../../components/NavBar';
@@ -25,6 +26,7 @@ export const EpisodesScreen = () => {
       <Louder loading={loading}/>
         :
         <div>
+           <Outlet />
           <NavBar />
           <InputSearch typeSearch={'episodes'} />
          <Typography variant='h3' fontWeight={'bold'}>
