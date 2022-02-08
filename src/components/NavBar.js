@@ -1,10 +1,11 @@
 import React from 'react';
 
 import AppBar from '@mui/material/AppBar';
-import {Typography,IconButton,Box,Toolbar,Button, Container, Link,MenuItem} from '@mui/material';
+import {Typography,IconButton,Box,Toolbar,Button, Container,MenuItem} from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import { pages } from '../utils/utils';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
 
@@ -72,7 +73,7 @@ export const NavBar = () => {
                 pages.map((page) => (
                   <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
-                      <Link underline="hover" href={page.path} >
+                      <Link  to={page.path} >
                         {page.name}
                       </Link>
                     </Typography>
@@ -89,7 +90,7 @@ export const NavBar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  <Link href={page.path} underline="hover" color={'white'}>
+                  <Link to={page.path}>
                     {page.name}
                   </Link>
                 </Button>
