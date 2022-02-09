@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 export const GridEpisodeItem = ({ episode }) => {
+  // Card to show a individual episode
   return <Card sx={{ width: 200, margin: '1rem' }} style={{ backgroundColor: '#8D908D' }}>
     <CardActionArea  >
-
       <CardContent>
         <Typography gutterBottom variant="h5" component="h5" color={'white'}>
          {episode.name}
@@ -18,8 +18,6 @@ export const GridEpisodeItem = ({ episode }) => {
         <Typography gutterBottom variant="h6" component="p">
           Episode: {episode.episode}
         </Typography>
-        
-
       </CardContent>
     </CardActionArea>
 

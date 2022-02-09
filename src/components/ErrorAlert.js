@@ -2,6 +2,7 @@ import React from 'react';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 export const ErrorAlert = ({ message }) => {
+    // Show the error that the api return
     return <div>
         <Alert severity="error">
             <AlertTitle>Error!</AlertTitle>

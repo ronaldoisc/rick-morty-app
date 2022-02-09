@@ -2,10 +2,10 @@ import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
+import { CustomeLoader } from '../../components/CustomeLoader';
 import { CustomePagination } from '../../components/CustomePagination';
 import { ErrorAlert } from '../../components/ErrorAlert';
 import { InputSearch } from '../../components/InputSearch';
-import { Louder } from '../../components/Louder';
 import { NavBar } from '../../components/NavBar';
 import { startLoadingCharacters } from '../../redux/modules/characters';
 import { GridCharacters } from '../characters/GridCharacters';
@@ -26,7 +26,7 @@ export const CharactersScreen = () => {
   return <>
     {
       loading === true ?
-        <Louder loading={loading} />
+        <CustomeLoader loading={loading} />
         :
         (
           <>

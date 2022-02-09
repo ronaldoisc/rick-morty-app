@@ -7,36 +7,29 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useDispatch, useSelector } from 'react-redux';
 import { startSearchCharacterByName } from '../redux/modules/characters';
 export const CustomePagination = () => {
-    const { data, activeSearch } = useSelector(state => state.character);
-    const { type, name } = activeSearch;
-    
-    const dispatch = useDispatch();
-    
+  const { data, activeSearch } = useSelector(state => state.character);
+  const { type, name } = activeSearch;
 
-    return <Stack spacing={2}>
-        {
-            data.info &&
-            <Pagination
-           
-            
-            count={data.info.pages}
-            onChange={(event, val) => {
-                var index=val;
-                        dispatch(startSearchCharacterByName(type, name, index))
-                    }}
-         
-            renderItem={(item) => (
-              <PaginationItem
-            
-                components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
-                {...item}
-              />
-              
-            )}
-        
-           
+  const dispatch = useDispatch();
+
+  return <Stack spacing={2}>
+    {
+      // show the pagination component
+      data.info &&
+      <Pagination
+        count={data.info.pages}
+        onChange={(event, val) => {
+          var index = val;
+          dispatch(startSearchCharacterByName(type, name, index))
+        }}
+        renderItem={(item) => (
+          <PaginationItem
+            components={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
+            {...item}
           />
+        )}
+      />
 
-        }
-    </Stack>
+    }
+  </Stack>
 };

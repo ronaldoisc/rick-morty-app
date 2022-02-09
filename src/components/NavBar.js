@@ -25,7 +25,7 @@ export const NavBar = () => {
     setAnchorElUser(null);
   };
 
-
+// navbar component
 
   return <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static">
@@ -70,6 +70,7 @@ export const NavBar = () => {
               }}
             >
               {
+                // show the nav links
                 pages.map((page) => (
                   <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
@@ -84,6 +85,7 @@ export const NavBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {
+              // show the nav links
               pages.map((page) => (
                 <Button
                   key={page.id}

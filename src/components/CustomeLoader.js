@@ -8,7 +8,7 @@ const override = css`
   border-color: red;
 `;
 
-export const Louder = ({ loading }) => {
+export const CustomeLoader = ({ loading }) => {
     return <Box display={'flex'} height='100vh' flexDirection='column' justifyContent='center' alignItems={'center'}>
         <BounceLoader color={"blue"} loading={loading} css={override} size={100} margin={2} />
         <Typography fontWeight={'bold'}>

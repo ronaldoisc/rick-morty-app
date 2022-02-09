@@ -27,18 +27,12 @@ export const CharacterCard = ({ character }) => {
                 </Typography>
 
                 <Box display={'flex'} justifyContent='center'>
-
                     <LocationOn />
-
                     <Typography gutterBottom variant="p" fontSize={'1rem'} component="div">
                         {character.location && character.location.name}
                     </Typography>
-
                 </Box>
-
             </Box>
-
-
         </CardContent>
 
     </Card>;

@@ -8,7 +8,7 @@ import { Typography } from '@mui/material';
 
 
 export const GridCharacters = ({ characters }) => {
- 
+//  Grid to show all the characters
     return <Box sx={{ margin: '1rem' }}>
     <Typography sx={{ fontSize: { xs: '1rem', md: '2rem' } }}>
         Characters

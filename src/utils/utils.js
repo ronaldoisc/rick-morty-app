@@ -1,3 +1,4 @@
+//pages object
 export const pages = [
     {
       id: 1,

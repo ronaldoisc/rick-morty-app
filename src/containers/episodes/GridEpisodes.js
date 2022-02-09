@@ -4,10 +4,10 @@ import { GridEpisodeItem } from './GridEpisodeItem';
 
 
 export const GridEpisodes = ({ episodes }) => {
-
-
+    //    Grid to show the episodes
     return <Box display={'flex'} flexDirection={'row'} flexWrap={'wrap'} justifyContent='space-around'>
         {
+            
             episodes.map(episode => {
                 return <GridEpisodeItem key={episode.id} episode={episode} />
             })

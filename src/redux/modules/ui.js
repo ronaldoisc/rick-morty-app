@@ -1,13 +1,14 @@
+//TYPES
 export const types={
     startLoading:'ricky-morty/ui/startLoading',
     finishLoading:'ricky-morty/ui/finishLoading'
 }
-
+//INITIAL STATE
 const initialState={
     loading:false
 }
 
-
+//REDUCER
 export const uiReducer=(state=initialState,action)=>{
     switch (action.type) {
         case types.startLoading:

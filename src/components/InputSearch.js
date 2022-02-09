@@ -11,6 +11,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { startLoadingEpisodesByName } from '../redux/modules/episodes';
 
+// styles
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -63,6 +64,7 @@ export const InputSearch = ({ typeSearch }) => {
     return <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'flex', alignItems: 'center' } }}>
         <Search
             onKeyPressCapture={value => {
+                // if the user pressed enter make the request
                 if (value.charCode === 13) {
                     if (typeSearch === 'characters') {
                         dispatch(startSearchCharacterByName(type, value.target.value))

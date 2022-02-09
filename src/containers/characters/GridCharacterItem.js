@@ -10,7 +10,8 @@ import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 
 export const GridCharacterItem = ({ character }) => {
-
+  
+// styles
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: character.status === 'Alive' ? '#44b700' : 'red',
@@ -40,7 +41,7 @@ export const GridCharacterItem = ({ character }) => {
     },
   }));
 
-
+// card component to show the data character
   return <Card sx={{ maxWidth: 345 }}>
     <CardActionArea  >
       <Box display={'flex'} margin='10px'>
@@ -56,8 +57,6 @@ export const GridCharacterItem = ({ character }) => {
           {character.name}
         </Typography>
       </Box>
-
-
 
       <CardMedia
         component="img"
@@ -75,11 +74,9 @@ export const GridCharacterItem = ({ character }) => {
 
     </CardActionArea>
     <CardActions>
+      {/* link to redirect characterProfileScreen  */}
       <Link to={`/character/${character.id}`}>
       detalles</Link>
-      {/* <Link href={`/character/${character.id}`} underline="none">
-        More details
-      </Link> */}
     </CardActions>
   </Card>
     ;
