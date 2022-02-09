@@ -1,4 +1,4 @@
-const types={
+export const types={
     startLoading:'ricky-morty/ui/startLoading',
     finishLoading:'ricky-morty/ui/finishLoading'
 }

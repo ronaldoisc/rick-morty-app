@@ -1,6 +1,6 @@
-import { characterReducer,startLoadingCharacters, types } from "../../../redux/modules/characters";
 import configureStore from 'redux-mock-store';
 import thunk from "redux-thunk";
+import { characterReducer,startLoadingCharacters, types } from "../../../redux/modules/characters";
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
