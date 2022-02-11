@@ -3,7 +3,7 @@ export const pages = [
     {
       id: 1,
       name: 'Characters',
-      path: '/rick-morty/character/'
+      path: '/rick-morty/'
     },
     {
       id: 2,
