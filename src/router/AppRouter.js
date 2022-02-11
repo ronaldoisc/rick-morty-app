@@ -16,10 +16,10 @@ import { CharactersScreen } from '../containers/App/CharactersScreen';
 export const AppRouter = () => {
   return <Router>
   <Routes>
-     <Route exact path='/rick-morty/' element={<CharactersScreen/>}/>
-     {/* <Route exact path='/rick-morty/character/:characterId/' element={<CharacterProfileScreen/>}/> */}
+     <Route exact path='/rick-morty-app/' element={<CharactersScreen/>}/>
+     {/* <Route exact path='/rick-morty-app/character/:characterId/' element={<CharacterProfileScreen/>}/> */}
      {/* <Route exact path='/rick-morty/episodes/' element={<EpisodesScreen/>}/> */}
-     <Route path='/rick-morty/*' element={<Navigate to={'/rick-morty/'}/>} />
+     <Route path='/rick-morty-app/*' element={<Navigate to={'rick-morty-app/'}/>} />
   </Routes>
 </Router>;
 };
