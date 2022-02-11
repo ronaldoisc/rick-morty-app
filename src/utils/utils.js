@@ -3,11 +3,11 @@ export const pages = [
     {
       id: 1,
       name: 'Characters',
-      path: '/'
+      path: '/rick-morty/character/'
     },
     {
       id: 2,
       name: 'Episodes',
-      path: '/episodes'
+      path: '/rick-morty/episodes/'
     }
   ];

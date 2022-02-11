@@ -75,7 +75,7 @@ export const GridCharacterItem = ({ character }) => {
     </CardActionArea>
     <CardActions>
       {/* link to redirect characterProfileScreen  */}
-      <Link to={`/character/${character.id}`}>
+      <Link to={`/rick-morty/character/${character.id}`}>
       detalles</Link>
     </CardActions>
   </Card>
