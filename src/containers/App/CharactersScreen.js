@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
+import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { CustomeLoader } from '../../components/CustomeLoader';
@@ -16,7 +16,7 @@ export const CharactersScreen = () => {
   const dispatch = useDispatch();
 
   const { data, activeSearch } = useSelector(state => state.character);
-  const { loading } = useSelector(state => state.ui);
+  const { isLoading } = useSelector(state => state.ui);
 
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const CharactersScreen = () => {
 
   return <>
     {
-      loading === true ?
-        <CustomeLoader loading={loading} />
+       isLoading === true ?
+        <CustomeLoader loading={ isLoading} />
         :
         (
           <>

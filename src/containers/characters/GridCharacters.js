@@ -2,8 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 
 import Grid from '@mui/material/Grid';
-import { GridCharacterItem } from './GridCharacterItem';
 import { Typography } from '@mui/material';
+import { CustomeCard } from '../../components/CustomeCard';
+
 
 
 
@@ -18,7 +19,7 @@ export const GridCharacters = ({ characters }) => {
             characters &&
             characters.map(character => {
                 return <Grid key={character.id} item xs={12} sm={6} md={4} lg={3} >
-                    <GridCharacterItem character={character} />
+                   <CustomeCard character={character}/>
                 </Grid>
             })
         }

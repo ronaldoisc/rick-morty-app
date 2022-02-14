@@ -1,15 +1,17 @@
 import React from 'react';
-
-import AppBar from '@mui/material/AppBar';
+// IMPORTS MATERIAL UI
 import {Typography,IconButton,Box,Toolbar,Button, Container,MenuItem} from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import { pages } from '../utils/utils';
+import AppBar from '@mui/material/AppBar';
+
+// IMPORTS REACT ROUTER
 import { Link } from 'react-router-dom';
 
+// LOCALES IMPORTS
+import { pages } from '../utils/utils';
+
 export const NavBar = () => {
-
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 

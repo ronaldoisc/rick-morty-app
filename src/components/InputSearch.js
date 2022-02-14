@@ -1,15 +1,21 @@
+// IMPORTS REACT
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+// IMPORTS MATERIAL UI
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
-import { styled, alpha } from '@mui/material/styles';
-import { startSearchCharacterByName } from '../redux/modules/characters';
-import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { styled, alpha } from '@mui/material/styles';
+
+// LOCAL IMPORTS
+
 import { startLoadingEpisodesByName } from '../redux/modules/episodes';
+import { startSearchCharacterByName } from '../redux/modules/characters';
 
 // styles
 const Search = styled('div')(({ theme }) => ({
@@ -57,31 +63,30 @@ export const InputSearch = ({ typeSearch }) => {
     const dispatch = useDispatch();
 
     const [type, setType] = React.useState('');
-    const handleChange = (event) => {
+
+
+    const handleSelectOnChange = (event) => {
         setType(event.target.value);
     };
 
+    const handleOnKeyPress = (value) => {
+        if (value.charCode === 13) {
+            if (typeSearch === 'characters') {
+                dispatch(startSearchCharacterByName(type, value.target.value))
+            } else if (typeSearch === 'episodes') {
+                dispatch(startLoadingEpisodesByName(type, value.target.value))
+            }
+        }
+    }
+
     return <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'flex', alignItems: 'center' } }}>
-        <Search
-            onKeyPressCapture={value => {
-                // if the user pressed enter make the request
-                if (value.charCode === 13) {
-                    if (typeSearch === 'characters') {
-                        dispatch(startSearchCharacterByName(type, value.target.value))
-                    } else if (typeSearch === 'episodes') {
-                        dispatch(startLoadingEpisodesByName(type, value.target.value))
-                    }
-                }
-            }}
-        >
+        <Search onKeyPressCapture={value => handleOnKeyPress(value)}>
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
-                placeholder="Search here.."
-                inputProps={{ 'aria-label': 'search' }}
-            />
+            <StyledInputBase placeholder="Search here.." inputProps={{ 'aria-label': 'search' }} />
         </Search>
+        
         <Box sx={{ width: 150, marginLeft: { xs: '0px', md: '1rem' }, marginTop: { xs: '10px' } }} >
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">filter</InputLabel>
@@ -92,7 +97,7 @@ export const InputSearch = ({ typeSearch }) => {
                             id="demo-simple-select"
                             value={type}
                             label="character"
-                            onChange={handleChange}
+                            onChange={handleSelectOnChange}
                         >
                             <MenuItem value={'name'}>name</MenuItem>
                             <MenuItem value={'status'}>status</MenuItem>
@@ -105,7 +110,7 @@ export const InputSearch = ({ typeSearch }) => {
                             id="demo-simple-select"
                             value={type}
                             label="episode"
-                            onChange={handleChange}
+                            onChange={handleSelectOnChange}
                         >
                             <MenuItem value={'name'}>name</MenuItem>
                             <MenuItem value={'episode'}>episode</MenuItem>

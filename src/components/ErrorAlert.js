@@ -1,4 +1,5 @@
 import React from 'react';
+// IMPORTS MATERIAL UI
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 export const ErrorAlert = ({ message }) => {

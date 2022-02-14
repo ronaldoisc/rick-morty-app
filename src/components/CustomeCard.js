@@ -1,17 +1,18 @@
 import React from 'react';
+
+// IMPORTS MATERIAL UI
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
-import { Avatar, Box, CardActionArea, CardActions} from '@mui/material';
+import { Avatar, Box, CardActionArea, CardActions } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 
-export const GridCharacterItem = ({ character }) => {
-  
-// styles
+
+export const CustomeCard = ({ character, showCardActions = true }) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: character.status === 'Alive' ? '#44b700' : 'red',
@@ -41,7 +42,6 @@ export const GridCharacterItem = ({ character }) => {
     },
   }));
 
-// card component to show the data character
   return <Card sx={{ maxWidth: 345 }}>
     <CardActionArea  >
       <Box display={'flex'} margin='10px'>
@@ -73,11 +73,15 @@ export const GridCharacterItem = ({ character }) => {
       </CardContent>
 
     </CardActionArea>
-    <CardActions>
-      {/* link to redirect characterProfileScreen  */}
-      <Link to={`/rick-morty-app/character/${character.id}`}>
-      detalles</Link>
-    </CardActions>
+    {
+      showCardActions &&
+      <CardActions>
+        {/* link to redirect characterProfileScreen  */}
+        <Link to={`/rick-morty-app/character/${character.id}`}>
+          detalles</Link>
+      </CardActions>
+    }
+
   </Card>
-    ;
+
 };

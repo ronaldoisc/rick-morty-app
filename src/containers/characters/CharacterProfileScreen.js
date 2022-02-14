@@ -1,13 +1,20 @@
-import { Box, Typography } from '@mui/material';
+// IMPORTS REACT
 import React, { useEffect } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
 
+// IMPORT REACT-REDUX
 import { useDispatch } from 'react-redux';
-import { startLoadingCharacterById } from '../../redux/modules/characters';
 import { useSelector } from 'react-redux';
 
+// IMPORTS REACT ROUTER
+import { Outlet, useParams } from 'react-router-dom';
+
+// IMPORTS MATERIAL
+import { Box, Typography } from '@mui/material';
+
+// IMPORTS CUSTOME COMPONENTS
+import { startLoadingCharacterById } from '../../redux/modules/characters';
 import { GridEpisodes } from '../episodes/GridEpisodes';
-import { CharacterCard } from '../../components/CharacterCard';
+import {  CustomeCard } from '../../components/CustomeCard';
 import { CustomeLoader} from '../../components/CustomeLoader';
 
 export const CharacterProfileScreen = () => {
@@ -20,20 +27,20 @@ export const CharacterProfileScreen = () => {
   }, [characterId, dispatch]);
 
   const { activeCharacter: character, characterEpisodes } = useSelector(state => state.character);
-  const { loading } = useSelector(state => state.ui);
+  const {  isLoading } = useSelector(state => state.ui);
 
   return <>
     {
       // if loading is true, the app will show a loader
-      loading === true ?
-        <CustomeLoader loading={loading} />
+      isLoading === true ?
+        <CustomeLoader loading={ isLoading} />
         :
         <div>
           <Outlet />
           <Box display={'flex'} flexDirection={'column'} justifyContent='center' alignItems={'center'}>
             <Typography variant='h2'>Character Profile</Typography>
             {/* show the character profile information */}
-            <CharacterCard character={character} />
+            <CustomeCard character={character} showCardActions={false} />
             <h1>((Episodes))</h1>
             {/* show the episodes that belong to the character selected */}
             <GridEpisodes episodes={characterEpisodes} />

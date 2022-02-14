@@ -5,7 +5,7 @@ export const types={
 }
 //INITIAL STATE
 const initialState={
-    loading:false
+    isLoading:false
 }
 
 //REDUCER
@@ -14,12 +14,12 @@ export const uiReducer=(state=initialState,action)=>{
         case types.startLoading:
            return {
                ...state,
-               loading:true
+               isLoading:true
            }
         case types.finishLoading:
            return {
                ...state,
-               loading:false
+               isLoading:false
            }
       
         default:
